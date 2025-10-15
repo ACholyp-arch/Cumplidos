@@ -1,0 +1,146 @@
+:root{
+  --bg: #FFF8F0;
+  --card: #FFDAB3;
+  --accent: #d35400;
+  --accent-2: #ff8c42;
+  --text: #4b2e2a;
+  --muted: #7a5b4f;
+  --shadow: 0 8px 30px rgba(69,33,13,0.12);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#FFF9F1 0%, #FFF3E6 100%);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:900px;
+  background:var(--bg);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+header h1{
+  margin:0 0 6px 0;
+  color:var(--accent);
+}
+header p{margin:0;color:var(--muted)}
+
+.controls{
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+  align-items:end;
+  flex-wrap:wrap;
+}
+
+.controls .left,
+.controls .right{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.controls label{font-size:0.9rem;color:var(--muted)}
+.controls input{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(180,120,60,0.12);
+  min-width:260px;
+  background:linear-gradient(180deg,#fff 0%, #fff7ef 100%);
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+button{
+  border:0;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);
+  color:white;
+  box-shadow:0 6px 16px rgba(208,83,0,0.18);
+}
+
+button.secondary{
+  background:transparent;color:var(--accent);border:1px solid rgba(211,83,0,0.12);
+  box-shadow:none;font-weight:700;
+}
+
+.status{
+  margin-top:12px;color:var(--muted);
+}
+
+/* Result */
+.result-area{
+  margin-top:18px;
+  min-height:120px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+
+/* Card */
+.result-card{
+  background: linear-gradient(180deg, rgba(255,238,214,0.95), rgba(255,221,170,0.95));
+  padding:14px;
+  border-radius:12px;
+  border:1px solid rgba(210,120,30,0.06);
+  box-shadow:0 8px 18px rgba(0,0,0,0.06);
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.result-left{flex:1}
+.result-right{flex:1}
+
+.name{
+  font-size:1.05rem;
+  color:var(--accent-2);
+  font-weight:700;
+  margin-bottom:6px;
+}
+.meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
+.role-badge{
+  display:inline-block;padding:6px 8px;border-radius:8px;font-weight:800;background:rgba(211,83,0,0.1);color:var(--accent-2);
+}
+
+/* dice */
+.dice{
+  font-size:46px;
+  transition: transform .3s ease;
+}
+
+/* case blocks */
+.case{
+  background: rgba(255,255,255,0.9);
+  padding:8px;border-radius:8px;border:1px dashed rgba(180,120,60,0.12);
+  margin-top:6px;
+}
+.case b{display:block;margin-bottom:6px}
+
+/* small notes */
+.foot{margin-top:12px;color:var(--muted);font-size:0.9rem}
+
+/* responsive */
+@media (max-width:720px){
+  .controls{flex-direction:column;align-items:stretch}
+  .actions{justify-content:flex-start}
+  .result-card{flex-direction:column;align-items:flex-start}
+}
