@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Juego de Cumplidos — Ingresa tu nombre</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Juego de Cumplidos 🍂</h1>
+      <p>Ingresa tu nombre y pega el <strong>seed</strong> (clave) compartido por nosotros para ver tu pareja y rol.</p>
+    </header>
+
+    <section class="controls">
+      <div class="left">
+        <label for="nameInput">Tu nombre completo</label>
+        <input id="nameInput" placeholder="Ej: Angel David Colloy Maldonado" />
+      </div>
+
+      <div class="right">
+        <label for="seedInput">Seed (clave compartida)</label>
+        <input id="seedInput" placeholder="Pega aquí el seed del profesor" />
+      </div>
+
+      <div class="actions">
+        <button id="revealBtn">🎲 Revelar mi pareja</button>
+        <button id="generateSeedBtn" title="Generar seed para compartir">⚙️ Generar y copiar seed</button>
+      </div>
+    </section>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <section id="resultArea" class="result-area" aria-live="polite">
+      <!-- Resultado aparecerá aquí -->
+    </section>
+
+    <footer class="foot">
+      <small>Si hay 23 personas, se generará automáticamente un grupo de 3. Todos los emparejamientos con el mismo seed serán idénticos.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
